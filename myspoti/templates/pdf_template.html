@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        img {
+            max-width: 100px;
+            max-height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Spotify Top Tracks</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Album</th>
+                <th>Artist</th>
+                <th>Spotify URL</th>
+                <th>Album Cover</th>
+                <th>Duration (min)</th>
+                <th>Popularity</th>
+                <th>Release Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for track in tracks %}
+            <tr>
+                <td>{{ track.0 }}</td>
+                <td>{{ track.1 }}</td>
+                <td>{{ track.2 }}</td>
+                <td><a href="{{ track.3 }}">Listen on Spotify</a></td>
+                <td><img src="{{ track.4 }}" alt="Album Cover"></td>
+                <td>{{ track.5 }}</td>
+                <td>{{ track.6 }}</td>
+                <td>{{ track.7 }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
